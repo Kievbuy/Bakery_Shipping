@@ -36,9 +36,9 @@ def order
     p_keys.delete_at(x)
     
     p_keys.each do |i|
-      num = q / i
-      delivery[i] = num
-      q = q - (num * i)
+        num = q / i
+        delivery[i] = num
+        q = q - (num * i)
       if q == 0
         break
       end
@@ -65,7 +65,9 @@ def order
   
   puts "#{str} $ #{total}"
   result.each do |k, v|
-    puts "#{v} x #{k} $ #{(@packs[ord[1]][k])}"
+    if v != 0
+      puts "#{v} x #{k} $ #{(@packs[ord[1]][k])}"
+    end
   end
 end
 
